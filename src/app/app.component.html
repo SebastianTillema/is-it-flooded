@@ -1,8 +1,7 @@
-<div *ngIf="data">
-  <div *ngFor="let feature of data?.features">
-    <div *ngFor="let info of feature.properties.ts_info">
-      {{info.label | json}}
-      {{info.value | json}}
-    </div>
-  </div>
+<div *ngIf="waterlevel">
+  <h1>Er det oversvømmet?</h1>
+  <h2 [class.no]="flooded" [class.yes]="!flooded">
+    {{flooded ? 'Ja' : 'Nej'}}
+  </h2>
+  <h2>{{waterlevel + 'm'}}</h2>
 </div>

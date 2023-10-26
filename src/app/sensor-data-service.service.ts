@@ -12,7 +12,7 @@ export class SensorDataServiceService {
   constructor(private http: HttpClient) { }
 
   getSensorData(): Observable<SensorData> {
-    let params = new HttpParams().set('q', 'select%20%20%20%20%20%20%20%20%20%20%20liif.loc_id,%20%20%20%20%20%20%20%20%20%20to_json(ts_info%20||%20COALESCE(cli.criteria_level,%20%27[]%27::jsonb))%20AS%20ts_info%20%20%20%20%20%20%20%20%20%20FROM%20sensor.latest_information_info_function(array[1523])%20as%20liif%20%20%20%20%20%20%20%20%20%20LEFT%20JOIN%20sensor.criteria_level_info%20cli%20ON%20cli.loc_id%20=%20liif.loc_id;');
+    let params = new HttpParams().set('q', 'select to_json(ts_info) AS ts_info FROM sensor.latest_information_info_function(array[1523]) as liif');
     return this.http.get<SensorData>(this.apiUrl, { params });
   }
 }

@@ -43,3 +43,10 @@ export interface AuthCheck {
     auth_level: any
     checked_relations: string[]
 }
+
+// helpers
+export function getWaterLevel(data: SensorData) {
+    return data.features.flatMap(f => f.properties.ts_info
+        .filter(i => i.label === "Vandstand")
+        .map(i => +i.value.substring(0, 4)))[0]
+}

@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "is-it-flooded:build:production"
+              "buildTarget": "is-it-flooded:build:production"
             },
             "development": {
-              "browserTarget": "is-it-flooded:build:development"
+              "buildTarget": "is-it-flooded:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "is-it-flooded:build"
+            "buildTarget": "is-it-flooded:build"
           }
         },
         "test": {
@@ -100,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

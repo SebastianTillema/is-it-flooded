@@ -8,7 +8,7 @@ h1 {
 }
 
 h2 {
-    font-family: candara,verdana,sans-serif;
+    font-family: candara, verdana, sans-serif;
     font-size: 48pt;
     text-align: center;
     font-weight: bold;
@@ -21,4 +21,55 @@ h2 {
 
 .no {
     color: #f63a2d;
+}
+
+.stillwater-background {
+
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+}
+
+.wave-background {
+    height: 90px;
+    position: relative;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    width: 200%;
+    // height: 100%;
+    background-image: url('/assets/wave_2-2.svg');
+    background-repeat: repeat-x;
+    animation: moveSlideshow 10s linear infinite;
+    will-change: transform;
+}
+
+@keyframes moveSlideshow {
+    0% {
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-50%);
+    }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+.top {
+  height: var(--top-height, 50px); /* Dynamic height controlled via TS */
+  background-color: lightblue; /* Example styling */
+}
+
+.middle {
+  height: 100px; /* Constant height */
+  background-color: lightgreen; /* Example styling */
+}
+
+.bottom {
+  flex-grow: 1; /* Fills the remaining space */
+  background-color: lightcoral; /* Example styling */
 }

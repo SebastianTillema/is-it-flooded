@@ -23,45 +23,53 @@ h2 {
     color: #f63a2d;
 }
 
+.stillwater-background {
+
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+}
+
+.wave-background {
+    height: 90px;
+    position: relative;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    width: 200%;
+    // height: 100%;
+    background-image: url('/assets/wave_2-2.svg');
+    background-repeat: repeat-x;
+    animation: moveSlideshow 10s linear infinite;
+    will-change: transform;
+}
+
 @keyframes moveSlideshow {
     0% {
         -webkit-transform: translateX(0);
     }
-
     100% {
         -webkit-transform: translateX(-50%);
     }
 }
 
 .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
 }
 
 .top {
-    height: var(--height);
+  height: var(--top-height, 50px); /* Dynamic height controlled via TS */
+  background-color: lightblue; /* Example styling */
 }
 
 .middle {
-    height: 1600px;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 200%;
-    background-image: url('/assets/wave_2-2.svg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    animation: moveSlideshow 10s linear infinite;
-    will-change: transform;
+  height: 100px; /* Constant height */
+  background-color: lightgreen; /* Example styling */
 }
 
 .bottom {
-    flex-grow: 1;
-    background-color: #004455;
+  flex-grow: 1; /* Fills the remaining space */
+  background-color: lightcoral; /* Example styling */
 }

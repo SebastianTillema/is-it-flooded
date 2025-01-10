@@ -14,10 +14,8 @@ import { SensorData, getWaterLevel } from './sensor-data';
 export class AppComponent implements OnInit {
   waterlevel: number | undefined;
   flooded: boolean | undefined;
-  topHeight = '450px'; // Dynamic height value
-  constructor(private sensorService: SensorDataServiceService) {
-    document.documentElement.style.setProperty('--top-height', this.topHeight);
-  }
+
+  constructor(private sensorService: SensorDataServiceService) { }
 
   ngOnInit() {
     this.sensorService.getSensorData().subscribe((data) => {

@@ -1,11 +1,14 @@
-@if (waterlevel) {
-<app-wave-background @ng-if [waterLevel]="waterlevel" style="z-index: -10;" />
-
 <div class="container">
-  <h2>Er Brabrandstien Oversvømmet?</h2>
+  <div [style]="style" class="top">test</div>
+  <div class="middle"></div>
+  <div class="bottom"></div>
+</div>
+
+<div *ngIf="waterlevel">
+  <h1>Er det oversvømmet?</h1>
   <h2 [class.no]="flooded" [class.yes]="!flooded">
     {{flooded ? 'Ja' : 'Nej'}}
   </h2>
-  <p>Vandstanden er {{waterlevel + 'm'}}, hvilket medføre ca. {{waterlevel * 100 - 140}}cm vand ovenpå stien.</p>
+  <h2>{{waterlevel + 'm'}}</h2>
 </div>
-}
+    <button (click)="inc()">+</button>

@@ -1,24 +1,33 @@
-h1 {
-    font-family: constantia, georgia, serif;
-    font-size: 36pt;
+// h1 {
+//     font-family: constantia, georgia, serif;
+//     font-size: 36pt;
+//     text-align: center;
+//     line-height: 4em;
+//     color: #ccc;
+//     font-weight: bold;
+// }
+
+// h2 {
+//     font-family: candara, verdana, sans-serif;
+//     font-size: 48pt;
+//     text-align: center;
+//     font-weight: bold;
+//     color: #ccc;
+// }
+
+// .yes {
+//     color: #66bc46;
+// }
+
+// .no {
+//     color: #f63a2d;
+// }
+
+
+.container {
     text-align: center;
-    line-height: 4em;
-    color: #ccc;
-    font-weight: bold;
-}
-
-h2 {
-    font-family: candara,verdana,sans-serif;
-    font-size: 48pt;
-    text-align: center;
-    font-weight: bold;
-    color: #ccc;
-}
-
-.yes {
-    color: #66bc46;
-}
-
-.no {
-    color: #f63a2d;
+    margin: 10vh 10vw 0 15vw;
+    padding: 5px;
+    background-color: rgba($color: #c1c1c2, $alpha: 0.5);
+    border-radius: 10px;
 }

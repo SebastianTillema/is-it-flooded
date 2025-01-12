@@ -1,4 +1,4 @@
-.ground {
+.measure-stick {
     position: absolute;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
     justify-content: start;
 }
 
-.ground img {
+.measure-stick img {
     height: 100%;
     width: auto;
 }
@@ -32,11 +32,11 @@
     flex-direction: column;
 }
 
-.top {
+.sky {
     height: var(--height);
 }
 
-.middle {
+.wave {
     position: relative;
     top: 0;
     bottom: 0;
@@ -49,7 +49,7 @@
     will-change: transform;
 }
 
-.bottom {
+.water {
     flex-grow: 1;
     background-color: #00222b;
     margin-top: -1px; // resolve rounding issues for subpixel sizes

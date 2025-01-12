@@ -6,4 +6,4 @@ Link to the webpage: https://sebastiantillema.github.io/is-it-flooded/
 ## Deployment
 Deploy to github pages by building to `docs` and pushing to main.
 
-`ng build --configuration=production --output-path docs --base-href /is-it-flooded/`
+`ng build --configuration=production --output-path docs --base-href /is-it-flooded/ --deploy-url /is-it-flooded/`

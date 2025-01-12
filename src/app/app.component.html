@@ -3,9 +3,10 @@
 
 <div class="container">
   <h2>Er Brabrandstien Oversvømmet?</h2>
-  <h2 [class.no]="flooded" [class.yes]="!flooded">
-    {{flooded ? 'Ja' : 'Nej'}}
-  </h2>
-  <p>Vandstanden er {{waterlevel + 'm'}}, hvilket medføre ca. {{waterlevel * 100 - 140}}cm vand ovenpå stien.</p>
+  <h2>{{flooded ? 'Ja' : 'Nej'}}</h2>
+  <p>{{flooded ? 'Over' : 'Under'}} stien <b>{{waterlevel * 100 - 140}}cm</b></p>
+  <p>Vandstanden <b>{{waterlevel}}m</b></p>
 </div>
+} @else {
+  Loading...
 }

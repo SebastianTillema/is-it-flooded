@@ -11,13 +11,13 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './wave-background.component.scss'
 })
 export class WaveBackgroundComponent {
-  @Input() waterLevel: number | undefined;
+  @Input({'required': true}) waterLevel!: number;
 
   constructor(private sanitizer: DomSanitizer) { }
 
   get style() {
-    var heightAboveWater = this.waterLevelToTopHeight(this.waterLevel ?? 1.1 + 0.0 * 0.9);
-    return this.sanitizer.bypassSecurityTrustStyle(`--height: ${heightAboveWater}vh`);
+    var heightAboveWater = this.waterLevelToTopHeight(this.waterLevel);
+    return this.sanitizer.bypassSecurityTrustStyle(`--height: ${heightAboveWater}%`);
   }
 
   waterLevelToTopHeight(x: number): number {
